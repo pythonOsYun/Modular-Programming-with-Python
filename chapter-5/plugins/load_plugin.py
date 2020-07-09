@@ -8,4 +8,3 @@ if plugin_name != "":
     sys.path.append(plugin_dir)
     plugin = importlib.import_module(plugin_name)
     plugin.say_hello()
-

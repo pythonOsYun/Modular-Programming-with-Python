@@ -1,5 +1,6 @@
 import re
 
+
 def extract_numbers(s):
     pattern = r'[+-]?\d+(?:\.\d+)?'
     numbers = []
@@ -7,4 +8,3 @@ def extract_numbers(s):
         number = s[match.start():match.end()]
         numbers.append(number)
     return numbers
-

@@ -2,13 +2,14 @@
 
 import datetime
 
-MAX_CACHE_SIZE = 100 # Maximum number of entries in the cache.
+MAX_CACHE_SIZE = 100  # Maximum number of entries in the cache.
+
 
 #############################################################################
 
 def init():
     global _cache
-    _cache = {} # Maps key to (timestamp, value) tuple.
+    _cache = {}  # Maps key to (timestamp, value) tuple.
 
 
 def set(key, value):
@@ -36,6 +37,7 @@ def size():
     global _cache
     return len(_cache)
 
+
 #############################################################################
 
 # Private functions:
@@ -51,4 +53,3 @@ def _remove_oldest_entry():
 
     if oldest != None:
         del _cache[oldest]
-

@@ -4,12 +4,13 @@
 
 from ...constants import *
 
+
 #############################################################################
 
 def draw(chart, canvas):
     label_height = 12 * 1.2
 
-    axis_top    = CHART_HEIGHT - TITLE_HEIGHT
+    axis_top = CHART_HEIGHT - TITLE_HEIGHT
     axis_bottom = X_AXIS_HEIGHT
     axis_height = axis_top - axis_bottom
 
@@ -35,10 +36,9 @@ def draw(chart, canvas):
 
         label_width = canvas.stringWidth(str(y_value),
                                          "Helvetica", 12)
-        label_left   = Y_AXIS_WIDTH - TICKMARK_HEIGHT - label_width - 4
-        label_bottom = y_pos - label_height/4
+        label_left = Y_AXIS_WIDTH - TICKMARK_HEIGHT - label_width - 4
+        label_bottom = y_pos - label_height / 4
 
         canvas.setFont("Helvetica", 12)
         canvas.setFillColorRGB(0.0, 0.0, 0.0)
         canvas.drawString(label_left, label_bottom, str(y_value))
-

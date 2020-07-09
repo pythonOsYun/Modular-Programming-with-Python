@@ -13,9 +13,9 @@ def reset(ranges=None):
     global _counts
 
     _ranges = ranges
-    _counts = {} # If _ranges is None, maps value to number of occurrences.
-                 # Otherwise, maps (min_value,max_value) to number of
-                 # occurrences.
+    _counts = {}  # If _ranges is None, maps value to number of occurrences.
+    # Otherwise, maps (min_value,max_value) to number of
+    # occurrences.
 
 
 def add(value):
@@ -28,9 +28,9 @@ def add(value):
         key = value
     else:
         key = None
-        for i in range(len(_ranges)-1):
-            if value >= _ranges[i] and value < _ranges[i+1]:
-                key = (_ranges[i], _ranges[i+1])
+        for i in range(len(_ranges) - 1):
+            if value >= _ranges[i] and value < _ranges[i + 1]:
+                key = (_ranges[i], _ranges[i + 1])
                 break
         if key == None:
             raise RuntimeError("Value out of range: {}".format(value))
@@ -54,9 +54,9 @@ def totals():
 
     if _ranges != None:
         results = []
-        for i in range(len(_ranges)-1):
+        for i in range(len(_ranges) - 1):
             min_value = _ranges[i]
-            max_value = _ranges[i+1]
+            max_value = _ranges[i + 1]
             num_occurrences = _counts.get((min_value, max_value), 0)
             results.append((min_value, max_value, num_occurrences))
         return results
@@ -65,4 +65,3 @@ def totals():
         for value in sorted(_counts.keys()):
             results.append((value, _counts[value]))
         return results
-

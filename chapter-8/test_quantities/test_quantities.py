@@ -5,6 +5,7 @@
 import unittest
 import quantities
 
+
 class TestQuantities(unittest.TestCase):
     def setUp(self):
         quantities.init("us")
@@ -23,6 +24,7 @@ class TestQuantities(unittest.TestCase):
         q = quantities.new(12, "km")
         with self.assertRaises(ValueError):
             quantities.convert(q, "kg")
+
 
 if __name__ == "__main__":
     unittest.main()

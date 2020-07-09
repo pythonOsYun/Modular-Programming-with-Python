@@ -6,17 +6,18 @@ from PIL import ImageFont
 
 from ...constants import *
 
+
 #############################################################################
 
 def draw(chart, drawer):
-    avail_width  = CHART_WIDTH - Y_AXIS_WIDTH - MARGIN
+    avail_width = CHART_WIDTH - Y_AXIS_WIDTH - MARGIN
     bucket_width = avail_width / len(chart['x_axis'])
 
-    max_top      = TITLE_HEIGHT
-    bottom       = CHART_HEIGHT - X_AXIS_HEIGHT
+    max_top = TITLE_HEIGHT
+    bottom = CHART_HEIGHT - X_AXIS_HEIGHT
     avail_height = bottom - max_top
 
-    left   = Y_AXIS_WIDTH
+    left = Y_AXIS_WIDTH
     prev_y = None
     for y_value in chart['series']:
         y = ((y_value - chart['y_min']) /
@@ -27,9 +28,6 @@ def draw(chart, drawer):
         if prev_y != None:
             drawer.line([(left - bucket_width / 2, prev_y),
                          (left + bucket_width / 2), cur_y],
-                         fill="#4040a0", width=1)
+                        fill="#4040a0", width=1)
         prev_y = cur_y
         left = left + bucket_width
-
-
-

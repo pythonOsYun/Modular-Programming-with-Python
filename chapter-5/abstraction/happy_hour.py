@@ -6,6 +6,7 @@
 
 import datetime
 
+
 #############################################################################
 
 def is_happy_hour():
@@ -17,16 +18,17 @@ def is_happy_hour():
     if today == easter_friday:
         return False
 
-    if today.month == 12 and today.day == 25: # Christmas day.
+    if today.month == 12 and today.day == 25:  # Christmas day.
         return False
 
-    if today.weekday() == 6: # Sunday.
+    if today.weekday() == 6:  # Sunday.
         return False
 
-    if datetime.datetime.now().hour == 17: # 5pm.
+    if datetime.datetime.now().hour == 17:  # 5pm.
         return True
 
     return False
+
 
 #############################################################################
 
@@ -43,8 +45,9 @@ def calc_easter_sunday(year):
     e = (32 + 2 * (b % 4) + 2 * (c // 4) - d - (c % 4)) % 7
     f = d + e - 7 * ((a + 11 * d + 22 * e) // 451) + 114
     month = f // 31
-    day = f % 31 + 1    
+    day = f % 31 + 1
     return datetime.date(year, month, day)
+
 
 #############################################################################
 
@@ -52,7 +55,8 @@ if __name__ == "__main__":
     # Testing code.
 
     if is_happy_hour():
-        print "It's happy hour!"
+        print
+        "It's happy hour!"
     else:
-        print "It's not happy hour."
-
+        print
+        "It's not happy hour."

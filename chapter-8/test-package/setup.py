@@ -10,4 +10,3 @@ setup(name="erikwestra-test-package",
       download_url="https://github.com/erikwestra/test-package/tarball/1.0",
       keywords=["test", "python"],
       classifiers=[])
-

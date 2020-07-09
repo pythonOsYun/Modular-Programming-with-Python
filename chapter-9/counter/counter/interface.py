@@ -6,7 +6,7 @@ def reset():
         This should be called before we start counting.
     """
     global _counts
-    _counts = {} # Maps value to number of occurrences.
+    _counts = {}  # Maps value to number of occurrences.
 
 
 def add(value):
@@ -32,4 +32,3 @@ def totals():
     for value in sorted(_counts.keys()):
         results.append((value, _counts[value]))
     return results
-

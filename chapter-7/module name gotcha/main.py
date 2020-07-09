@@ -3,5 +3,5 @@
 # subtle problems.
 
 import random
-print(random.choice(["yes", "no"]))
 
+print(random.choice(["yes", "no"]))

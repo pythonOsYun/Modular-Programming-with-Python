@@ -4,9 +4,11 @@ import unittest
 
 import counter
 
+
 class CounterTestCase(unittest.TestCase):
     """ Unit tests for the ``counter`` package.
     """
+
     def test_counter_totals(self):
         counter.reset()
         counter.add(1)
@@ -25,4 +27,3 @@ class CounterTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -4,9 +4,11 @@ import unittest
 
 import counter
 
+
 class CounterTestCase(unittest.TestCase):
     """ Unit tests for the ``counter`` package.
     """
+
     def test_counter_totals(self):
         counter.reset()
         counter.add(1)
@@ -26,6 +28,7 @@ class CounterTestCase(unittest.TestCase):
 class RangeCounterTestCase(unittest.TestCase):
     """ Unit tests for the range-based features of ``counter`` package.
     """
+
     def test_range_totals(self):
         counter.reset([0, 5, 10, 15])
         counter.add(3)
@@ -45,4 +48,3 @@ class RangeCounterTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

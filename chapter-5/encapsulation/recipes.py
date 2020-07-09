@@ -5,10 +5,10 @@
 def new(name, num_servings):
     """ Create and return a new recipe.
     """
-    return {'name'         : name,
-            'num_servings' : num_servings,
-            'instructions' : [],
-            'ingredients'  : []}
+    return {'name': name,
+            'num_servings': num_servings,
+            'instructions': [],
+            'ingredients': []}
 
 
 def add_instruction(recipe, instruction):
@@ -20,9 +20,9 @@ def add_instruction(recipe, instruction):
 def add_ingredient(recipe, ingredient, amount, units):
     """ Add an ingredient to the recipe.
     """
-    recipe['ingredients'].append({'ingredient' : ingredient,
-                                  'amount'     : amount,
-                                  'units'      : units})
+    recipe['ingredients'].append({'ingredient': ingredient,
+                                  'amount': amount,
+                                  'units': units})
 
 
 def get_name(recipe):
@@ -60,8 +60,7 @@ def to_string(recipe, num_servings):
     s.append("")
     s.append("Instructions:")
     s.append("")
-    for i,instruction in enumerate(recipe['instructions']):
-        s.append("{}. {}".format(i+1, instruction))
+    for i, instruction in enumerate(recipe['instructions']):
+        s.append("{}. {}".format(i + 1, instruction))
 
     return s
-

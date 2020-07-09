@@ -5,6 +5,7 @@
 
 import os.path
 
+
 def get_phone_numbers():
     phone_numbers = []
     cur_dir = os.path.abspath(os.path.dirname(__file__))
@@ -13,4 +14,3 @@ def get_phone_numbers():
         phone_numbers.append(line.strip())
     file.close()
     return phone_numbers
-

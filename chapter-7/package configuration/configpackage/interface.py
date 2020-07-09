@@ -15,4 +15,3 @@ def test():
         print("Error logging enabled")
     else:
         print("Error logging disabled")
-

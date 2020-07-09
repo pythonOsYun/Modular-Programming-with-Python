@@ -11,6 +11,7 @@ BANK_CODES = ["AMERUS33", "CERYUS33", "EQTYUS44",
 BRANCH_IDS = ["125000249", "125000252", "125000371",
               "125000402", "125000596", "125001067"]
 
+
 #############################################################################
 
 def main():
@@ -19,13 +20,13 @@ def main():
     # Create 10,000 random transfers.
 
     days = [1, 2, 3, 4, 5, 6, 7, 8]
-    transfers = [] # List of (day, bank_code, branch_id, amount) tuples.
+    transfers = []  # List of (day, bank_code, branch_id, amount) tuples.
 
     for i in range(10000):
-        day       = random.choice(days)
+        day = random.choice(days)
         bank_code = random.choice(BANK_CODES)
         branch_id = random.choice(BRANCH_IDS)
-        amount    = random.randint(1000, 1000000)
+        amount = random.randint(1000, 1000000)
 
         transfers.append((day, bank_code, branch_id, amount))
 
@@ -38,7 +39,7 @@ def main():
         transfers_by_day[day] = npw.new(num_rows=len(BANK_CODES),
                                         num_cols=len(BRANCH_IDS))
 
-    for day,bank_code,branch_id,amount in transfers:
+    for day, bank_code, branch_id, amount in transfers:
         array = transfers_by_day[day]
         row = BRANCH_IDS.index(branch_id)
         col = BANK_CODES.index(bank_code)
@@ -68,9 +69,9 @@ def main():
 
     unusual_transfers = current > average * 1.5
 
-    for row,col in npw.get_indices(unusual_transfers):
-        branch_id   = BRANCH_IDS[row]
-        bank_code   = BANK_CODES[col]
+    for row, col in npw.get_indices(unusual_transfers):
+        branch_id = BRANCH_IDS[row]
+        bank_code = BANK_CODES[col]
         average_amt = int(average[row][col])
         current_amt = current[row][col]
 
@@ -79,8 +80,8 @@ def main():
               " to bank {}, average = ${:,d}".format(bank_code,
                                                      average_amt))
 
+
 #############################################################################
 
 if __name__ == "__main__":
     main()
-

@@ -2,8 +2,8 @@
 
 from . import globals
 
+
 def test():
     globals.language = "EN"
     globals.currency = "NZD"
     print(globals.language, globals.currency)
-

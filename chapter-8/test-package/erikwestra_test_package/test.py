@@ -3,6 +3,7 @@
 import string
 import random
 
+
 def random_name():
     chars = []
     for i in range(random.randrange(3, 10)):
@@ -13,4 +14,3 @@ def random_name():
 def run():
     for i in range(10):
         print(random_name())
-

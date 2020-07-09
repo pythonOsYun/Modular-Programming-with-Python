@@ -9,9 +9,10 @@ import helpers
 
 print("Initializing test.py")
 
+
 def do_something(n):
     return n * 2
 
+
 if __name__ == "__main__":
     helpers.run_test()
-

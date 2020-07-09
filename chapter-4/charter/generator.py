@@ -9,6 +9,7 @@ from reportlab.pdfgen.canvas import Canvas
 from .constants import *
 from .renderers import renderer
 
+
 #############################################################################
 
 def generate_chart(chart, filename):
@@ -23,11 +24,11 @@ def generate_chart(chart, filename):
     if format == "pdf":
         output = Canvas(filename)
     elif format == "png":
-        image  = Image.new("RGB", (CHART_WIDTH, CHART_HEIGHT),
-                           "#ffffff")
+        image = Image.new("RGB", (CHART_WIDTH, CHART_HEIGHT),
+                          "#ffffff")
         output = ImageDraw.Draw(image)
 
-    renderer.draw(format, "title",  chart, output)
+    renderer.draw(format, "title", chart, output)
     renderer.draw(format, "x_axis", chart, output)
     renderer.draw(format, "y_axis", chart, output)
     if chart['series_type'] == "bar":
@@ -40,4 +41,3 @@ def generate_chart(chart, filename):
         output.save()
     elif format == "png":
         image.save(filename, format="png")
-

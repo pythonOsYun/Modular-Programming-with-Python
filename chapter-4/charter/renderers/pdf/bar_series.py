@@ -4,19 +4,20 @@
 
 from ...constants import *
 
+
 #############################################################################
 
 def draw(chart, canvas):
-    avail_width  = CHART_WIDTH - Y_AXIS_WIDTH - MARGIN
+    avail_width = CHART_WIDTH - Y_AXIS_WIDTH - MARGIN
     bucket_width = avail_width / len(chart['x_axis'])
 
-    bottom       = X_AXIS_HEIGHT
-    max_top      = CHART_HEIGHT - TITLE_HEIGHT
+    bottom = X_AXIS_HEIGHT
+    max_top = CHART_HEIGHT - TITLE_HEIGHT
     avail_height = max_top - bottom
 
     left = Y_AXIS_WIDTH
     for y_value in chart['series']:
-        bar_left  = left + MARGIN / 2
+        bar_left = left + MARGIN / 2
         bar_width = bucket_width - MARGIN
 
         y = ((y_value - chart['y_min']) /
@@ -30,4 +31,3 @@ def draw(chart, canvas):
                     stroke=True, fill=True)
 
         left = left + bucket_width
-

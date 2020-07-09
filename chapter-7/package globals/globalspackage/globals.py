@@ -5,4 +5,3 @@
 
 language = None
 currency = None
-

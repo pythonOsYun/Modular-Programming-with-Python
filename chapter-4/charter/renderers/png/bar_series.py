@@ -6,14 +6,15 @@ from PIL import ImageFont
 
 from ...constants import *
 
+
 #############################################################################
 
 def draw(chart, drawer):
-    avail_width  = CHART_WIDTH - Y_AXIS_WIDTH - MARGIN
+    avail_width = CHART_WIDTH - Y_AXIS_WIDTH - MARGIN
     bucket_width = avail_width / len(chart['x_axis'])
 
-    max_top      = TITLE_HEIGHT
-    bottom       = CHART_HEIGHT - X_AXIS_HEIGHT
+    max_top = TITLE_HEIGHT
+    bottom = CHART_HEIGHT - X_AXIS_HEIGHT
     avail_height = bottom - max_top
 
     left = Y_AXIS_WIDTH
@@ -29,6 +30,6 @@ def draw(chart, drawer):
         drawer.rectangle([(bar_left, bar_top),
                           (bar_right + 1,
                            bottom)],
-                          fill="#e8e8f4", outline="#4040a0")
+                         fill="#e8e8f4", outline="#4040a0")
 
         left = left + bucket_width

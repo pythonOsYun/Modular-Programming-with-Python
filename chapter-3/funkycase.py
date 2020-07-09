@@ -1,5 +1,6 @@
 import sys
 
+
 def funky_case(s):
     letters = []
     capitalize = False
@@ -11,10 +12,10 @@ def funky_case(s):
         capitalize = not capitalize
     return "".join(letters)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("You must supply exactly one string!")
     else:
         s = sys.argv[1]
         print(funky_case(s))
-

@@ -9,4 +9,3 @@ s = input("String:")
 results = re.search(pattern, s)
 
 print(results.group(), results.span())
-
